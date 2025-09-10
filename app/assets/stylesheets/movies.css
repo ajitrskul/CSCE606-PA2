@@ -7,13 +7,24 @@ table {
     padding: 10px;
 }
 
+thead {
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+tfoot {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
 th {
     font-family: 'Tahoma';
     font-size: 20px;
     padding: 10px 0px;
     text-align: center;
-    background-color: rgb(39, 118, 209);
+    background-color: rgb(116, 173, 239);
     color: white;
+    min-width: 230px;
 }
 
 td {
@@ -22,14 +33,51 @@ td {
     padding: 10px 0px;
     font-family: 'Tahoma';
     max-width: 350px;
-    max-height: 100px;
+    height: 70px;
     text-overflow: ellipsis;
 }
 
-.td-odd {
+.table-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort-button {
+    padding: 10px 25px;
+    /* border-color: rgb(16, 54, 116); */
+    font-family: Tahoma;
+    border: solid 1px;
+    border-radius: 6px;
+    text-decoration: none; 
+    color: white;
+}
+
+.sort-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(116, 173, 239);
+}
+
+.column-title {
+    padding-right: 20px;
+}
+
+.tr-odd {
     background-color: rgb(240, 240, 240);
 }
 
-.td-even {
-    background-color: rgb(210, 210, 210);
+.tr-even {
+    background-color: rgb(225, 225, 225);
+}
+
+.add-movie-button {
+    background-color: rgb(48, 134, 48);
+    color: white;
+    font-size: 20px;
+    font-family: Tahoma;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 20px 40px;
+    border-radius: 10px;
 }

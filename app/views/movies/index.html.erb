@@ -7,27 +7,43 @@
 <table>
   <thead>
     <tr>
-      <th><%= link_to "Title", movies_path(sort: "title", direction: toggle_direction("title")) %></th>
-      <th><%= link_to "Rating", movies_path(sort: "rating", direction: toggle_direction("rating")) %></th>
-      <th>Description</th>
-      <th><%= link_to "Release Date", movies_path(sort: "release_date", direction: toggle_direction("release_date")) %></th>
-      <th>More Info</th>
+      <th class="table-header">
+        <%= link_to movies_path(sort: "title", direction: toggle_direction("title")), class: "sort-button" do %>
+          Title <%= sort_arrow("title") %>
+        <% end %>
+      </th>
+      <th>
+        <%= link_to movies_path(sort: "rating", direction: toggle_direction("rating")), class: "sort-button" do %>
+          Rating <%= sort_arrow("rating") %>
+        <% end %>
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        <%= link_to movies_path(sort: "release_date", direction: toggle_direction("release_date")), class: "sort-button" do %>
+          Release Date <%= sort_arrow("release_date") %>
+        <% end %>
+      </th>
+      <th>
+        More Info
+      </th>
     </tr>
   </thead>
   <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td class="td-odd"><%= movie.title %></td>
-        <td class="td-even"><%= movie.rating %></td>
-        <td class="td-odd"><%= movie.description %></td>
-        <td class="td-even"><%= movie.release_date %></td>
-        <td class="td-odd"><%= link_to "Show this movie", movie %></td>
+    <% @movies.each_with_index do |movie, i| %>
+      <tr class="<%= i.even? ? 'tr-even' : 'tr-odd' %>">
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.release_date %></td>
+        <td><%= link_to "Show this movie", movie %></td>
       </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr> 
-      <td colspan="5"> <%= link_to "New movie", new_movie_path %> </td>
+      <td colspan="5"> <%= link_to "Add New Movie", new_movie_path, class: "add-movie-button" %> </td>
     </tr>
   </tfoot>
 </table>
