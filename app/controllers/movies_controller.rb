@@ -34,6 +34,14 @@ class MoviesController < ApplicationController
     end
   end
 
+  def index
+    sort_direction = params[:direction] || "asc" # Define direction to sort by
+    sort_column = %w[title rating release_date].include?(params[:sort]) ? params[:sort] : "title" # Define column to sort by
+    sort_direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc" # Define direction to sort by
+
+    @movies = Movie.order("#{sort_column} #{sort_direction}")
+  end
+
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
     respond_to do |format|
