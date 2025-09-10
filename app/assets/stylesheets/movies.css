@@ -1,0 +1,35 @@
+table {
+    width: 80%;
+    min-width: 700px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+th {
+    font-family: 'Tahoma';
+    font-size: 20px;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: rgb(39, 118, 209);
+    color: white;
+}
+
+td {
+    align-items: center;
+    text-align: center;
+    padding: 10px 0px;
+    font-family: 'Tahoma';
+    max-width: 350px;
+    max-height: 100px;
+    text-overflow: ellipsis;
+}
+
+.td-odd {
+    background-color: rgb(240, 240, 240);
+}
+
+.td-even {
+    background-color: rgb(210, 210, 210);
+}

@@ -1,15 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<% # Include page-specific CSS %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag "movies", "data-turbo-track": "reload" %>
+<% end %>
 
-<% content_for :title, "Movies" %>
-
-<h1>View Movies</h1>
+<h1 class="moves-title">View Movies</h1>
 <table>
   <thead>
     <tr>
-      <!-- <th>Title</th> -->
-      <!-- <th>Rating</th> -->
-      <!-- <th>Description</th> -->
-      <!-- th>Release Date</th> -->
       <th><%= link_to "Title", movies_path(sort: "title", direction: toggle_direction("title")) %></th>
       <th><%= link_to "Rating", movies_path(sort: "rating", direction: toggle_direction("rating")) %></th>
       <th>Description</th>
@@ -20,17 +17,17 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.description %></td>
-        <td><%= movie.release_date %></td>
-        <td><%= link_to "Show this movie", movie %></td>
+        <td class="td-odd"><%= movie.title %></td>
+        <td class="td-even"><%= movie.rating %></td>
+        <td class="td-odd"><%= movie.description %></td>
+        <td class="td-even"><%= movie.release_date %></td>
+        <td class="td-odd"><%= link_to "Show this movie", movie %></td>
       </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr> 
-      <td colspan="3"> <%= link_to "New movie", new_movie_path %> </td>
+      <td colspan="5"> <%= link_to "New movie", new_movie_path %> </td>
     </tr>
   </tfoot>
 </table>
