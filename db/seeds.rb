@@ -22,6 +22,9 @@ more_movies = [
     :release_date => '13-Aug-2021'}
 ]
 
-more_movies.each do |movie|
-  Movie.create!(movie)
+more_movies.each do |movie_attrs|
+  Movie.find_or_create_by!(title: movie_attrs[:title]) do |movie|
+    movie.rating = movie_attrs[:rating]
+    movie.release_date = movie_attrs[:release_date]
+  end
 end
