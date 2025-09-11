@@ -2,12 +2,13 @@
 <% content_for :css do %>
   <%= stylesheet_link_tag "movies", "data-turbo-track": "reload" %>
 <% end %>
-
-<h1 class="moves-title">View Movies</h1>
+<div class="movies-background"></div>
+<p class="site-header">rottenpotatoes</p>
+<p class="movies-title">View Movies</p>
 <table>
   <thead>
     <tr>
-      <th class="table-header">
+      <th>
         <%= link_to movies_path(sort: "title", direction: toggle_direction("title")), class: "sort-button" do %>
           Title <%= sort_arrow("title") %>
         <% end %>
@@ -33,17 +34,19 @@
   <tbody>
     <% @movies.each_with_index do |movie, i| %>
       <tr class="<%= i.even? ? 'tr-even' : 'tr-odd' %>">
-        <td><%= movie.title %></td>
-        <td><%= movie.rating %></td>
+        <td class="<%= sort_column == 'title' ? (sort_direction == 'asc' ? 'sorted-asc' : 'sorted-desc') : ''%> table-movie-titles">
+          <%= movie.title %>
+        </td>
+        <td class="<%= sort_column == 'rating' ? (sort_direction == 'asc' ? 'sorted-asc table-sorted' : 'sorted-desc table-sorted') : ''%>"><%= movie.rating %></td>
         <td><%= movie.description %></td>
-        <td><%= movie.release_date %></td>
-        <td><%= link_to "Show this movie", movie %></td>
+        <td class="<%= sort_column == 'release_date' ? (sort_direction == 'asc' ? 'sorted-asc table-sorted' : 'sorted-desc table-sorted') : ''%>"><%= movie.release_date.strftime("%m-%d-%Y") %></td>
+        <td><%= link_to "View", movie, class: "show-movie-button" %></td>
       </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr> 
-      <td colspan="5"> <%= link_to "Add New Movie", new_movie_path, class: "add-movie-button" %> </td>
+      <td colspan="5"> <%= link_to "+ Add New Movie", new_movie_path, class: "add-movie-button" %> </td>
     </tr>
   </tfoot>
 </table>

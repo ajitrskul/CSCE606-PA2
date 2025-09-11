@@ -1,15 +1,56 @@
+.movies-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(239, 241, 245);
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.site-header {
+    background-color: rgb(0, 73, 135);
+    position: absolute;
+    top: 0;
+    height: 80px;
+    left: 0;
+    right: 0;
+    font-weight: 1000;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-family: Tahoma;
+    margin: 0px !important;
+    align-items: center;
+    line-height: 80px;
+}
+
+.movies-title {
+    margin-top: 100px;
+    font-family: 'Tahoma';
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(0, 73, 135);
+}
+
 table {
     width: 80%;
     min-width: 700px;
     margin: 0 auto;
-    border: 1px solid black;
+    border: 1px solid rgb(53, 121, 188);
     border-radius: 15px;
     padding: 10px;
+    background-color: white;
 }
 
 thead {
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
+    background-color: rgb(116, 173, 239);
+    height: 100px;
 }
 
 tfoot {
@@ -22,7 +63,6 @@ th {
     font-size: 20px;
     padding: 10px 0px;
     text-align: center;
-    background-color: rgb(116, 173, 239);
     color: white;
     min-width: 230px;
 }
@@ -35,12 +75,6 @@ td {
     max-width: 350px;
     height: 70px;
     text-overflow: ellipsis;
-}
-
-.table-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .sort-button {
@@ -71,6 +105,23 @@ td {
     background-color: rgb(225, 225, 225);
 }
 
+.show-movie-button {
+    background-color: rgb(0, 96, 161);
+    color: white;
+    font-size: 20px;
+    font-family: Tahoma;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 10px;
+}
+
+.show-movie-button:hover {
+    color: rgb(0, 96, 161);
+    background-color: white;
+    border: solid 1px rgb(0, 96, 161);
+}
+
 .add-movie-button {
     background-color: rgb(48, 134, 48);
     color: white;
@@ -80,4 +131,97 @@ td {
     font-weight: 700;
     padding: 20px 40px;
     border-radius: 10px;
+}
+
+.add-movie-button:hover {
+    background-color: white;
+    color: rgb(48, 134, 48);
+    cursor: pointer;
+    border: solid 1px rgb(48, 134, 48);
+}
+
+.table-movie-titles {
+    font-weight: 700 !important;
+}
+
+.table-sorted {
+    font-weight: 700;
+}
+
+.sorted-asc {
+    background-color: rgb(0, 96, 161);
+    color: white;
+    border: solid 2px white;
+}
+
+.sorted-desc {
+    color: rgb(0, 96, 161);
+    border: solid 2px rgb(0, 96, 161);
+    background-color: rgb(239, 241, 245)
+}
+
+.change-movies-title {
+    padding-top: 20vh;
+    margin-top: 65px;
+    font-family: 'Tahoma';
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(0, 73, 135);
+}
+
+.movie-container {
+    width: 500px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 12px;
+    margin: 0px auto;
+    padding: 10px 20px;
+    font-family: Tahoma;
+    font-size: 18px;
+}
+
+.change-movies-footer {
+    padding-top: 15px;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.movie-button {
+    background-color: rgb(0, 96, 161);
+    color: white;
+    font-size: 20px;
+    font-family: Tahoma;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.movie-button:hover {
+    color: rgb(0, 96, 161);
+    background-color: white;
+    border: solid 1px rgb(0, 96, 161);
+}
+
+.destroy-button {
+    background-color: rgb(194, 11, 11);
+    color: white;
+    font-size: 20px;
+    font-family: Tahoma;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.destroy-button:hover {
+    color: rgb(194, 11, 11);;
+    background-color: white;
+    border: solid 1px rgb(194, 11, 11);;
+    cursor: pointer;
 }

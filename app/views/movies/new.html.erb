@@ -1,11 +1,11 @@
-<% content_for :title, "New movie" %>
-
-<h1>New movie</h1>
+<div class="movies-background"></div>
+<p class="site-header">rottenpotatoes</p>
+<p class="change-movies-title">Add Movie</p>
 
 <%= render "form", movie: @movie %>
 
 <br>
 
-<div>
-  <%= link_to "Back to movies", movies_path %>
+<div class="change-movies-footer" style="text-align: center;">
+  <%= link_to "Back to movies", movies_path, class: "movie-button" %>
 </div>

@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="movies-background"></div>
+<p class="site-header">rottenpotatoes</p>
+<p class="change-movies-title">More Info</p>
 <%= render @movie %>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+<div class="change-movies-footer">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <%= link_to "Edit this movie", edit_movie_path(@movie), class: "movie-button" %> 
+    <p>|</p>
+    <%= link_to "Back to movies", movies_path, class: "movie-button" %>
+  </div>
+  <div style="text-align: center; margin-top: 5px;">
+    <%= button_to "Destroy this movie", @movie, method: :delete, class: "destroy-button" %>
+  </div>
 </div>

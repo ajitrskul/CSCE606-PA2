@@ -24,7 +24,7 @@ more_movies = [
     :description => "As a CODA (Child of Deaf Adults), Ruby is the only hearing member of her deaf family. When she discovers her passion for music, she must choose between her family's reliance on her and her own dreams.", :release_date => '13-Aug-2021'},
   {:title => 'Everything Everywhere All at Once', :rating => 'R',
     :description => "An exhausted Chinese-American woman is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led.", :release_date => '8-Apr-2022'},
-  {:title => 'KPop Demon Hunters', :rating => 'PG',
+  {:title => 'Kpop Demon Hunters', :rating => 'PG',
     :description => "A group of K-Pop idols must save the world from demons while dealing with the pressures of fame.", :release_date => '23-Aug-2025'},
   {:title => 'Demon Slayer: Kimetsu no Yaiba Infinity Castle', :rating => 'R',
     :description => "The Demon Slayer Corps faces their greatest challenge yet as they enter the Infinity Castle to confront Muzan Kibutsuji.", :release_date => '12-Sept-2025'},

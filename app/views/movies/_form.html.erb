@@ -1,3 +1,4 @@
+<div class="movie-container">
 <%= form_with(model: movie) do |form| %>
   <% if movie.errors.any? %>
     <div style="color: red">
@@ -12,26 +13,27 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, style: "display: block; font-weight: 700; font-size: 20px;" %>
+    <%= form.text_field :title, style: "height: 25px; width: 485px; border-radius: 4px; border: solid 1px rgb(190, 190, 190); font-size: 18px; margin-bottom: 10px;" %>
   </div>
 
   <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.text_field :rating %>
+    <%= form.label :rating, style: "display: block; font-weight: 700;" %>
+    <%= form.text_field :rating, style: "height: 25px; width: 485px; border-radius: 4px; border: solid 1px rgb(190, 190, 190); font-size: 18px; margin-bottom: 10px;" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :description, style: "display: block; font-weight: 700;" %>
+    <%= form.text_field :description, style: "height: 25px; width: 485px; border-radius: 4px; border: solid 1px rgb(190, 190, 190); font-size: 18px; margin-bottom: 10px;" %>
   </div>
 
   <div>
-    <%= form.label :release_date, style: "display: block" %>
-    <%= form.text_field :release_date %>
+    <%= form.label :release_date, style: "display: block; font-weight: 700;" %>
+    <%= form.text_field :release_date, style: "height: 25px; width: 485px; border-radius: 4px; border: solid 1px rgb(190, 190, 190); font-size: 18px; margin-bottom: 10px;" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div style="text-align: center;">
+    <%= form.submit "Add Movie", class: "add-movie-button", style: "padding: 8px 35px !important; font-size: 14px;" %>
   </div>
 <% end %>
+</div>
